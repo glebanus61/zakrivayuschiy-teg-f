@@ -11,6 +11,441 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--background-gradient);
+  background-size: cover;
+}
+
+.width-project {
+  inline-size: var(--width-project);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  block-size: 368px;
+  background-color: #fff;
+  border: var(--border-elements);
+  margin-block-start: var(--margin);
+  padding: 1rem;
+}
+
+.logo-header {
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.title-header {
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.main {
+  inline-size: var(--width-project);
+  margin-block-start: var(--margin);
+  margin-block-end: calc(var(--margin) / 2);
+  background-color: #fff;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-elements);
+}
+
+.post-item-title {
+  font-family: "Inter-Variable", sans-serif;
+  font-variation-settings: "wght" 715;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 135%;
+  padding-inline: 10px;
+  min-height: 30px;
+  border-bottom: 2px solid black;
+}
+
+.post-image {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+}
+
+.filter1 {
+  filter: saturate(500%);
+}
+
+.filter2 {
+  filter: sepia(50%);
+}
+
+.filter3 {
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.filter4 {
+  filter: saturate(200%);
+}
+
+.filter5 {
+  filter: contrast(190%);
+}
+
+.filter6 {
+  filter: brightness(150%);
+}
+
+.filter7 {
+  filter: grayscale(1);
+}
+
+.filter8 {
+  filter: blur(0.3rem);
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  color: #00ffff;
+  opacity: 0.5;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--stroke-color);
+}
+
+@supports (text-stroke: 1px var(--stroke-color)) {
+  span {
+    text-stroke: 1px var(--stroke-color);
+  }
+}
+
+.post-item-text {
+  font-family: "Inter-Variable", sans-serif;
+  font-variation-settings: "wght" 410;
+  font-size: 18px;
+  line-height: 21px;
+  word-spacing: normal;
+  margin: 25px 25px 0px 25px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-block: 25px;
+  margin-inline-end: 25px;
+  gap: 7px;
+  height: 38px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.like-icon {
+  background-color: transparent;
+  border: transparent;
+  transition: border 0.3s ease;
+  cursor: pointer;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  border: var(--border-elements);
+  background-color: transparent;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.button__text {
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  position: relative;
+  background-color: black;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--margin);
+}
+
+.button-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: var(--border-elements);
+  width: 335px;
+  height: 55px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.floppy {
+  width: 21px;
+  height: 21px;
+  position: relative;
+  background-color: black;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.floppy-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 353px;
+  gap: 30px;
+  padding: 30px;
+  border: var(--border-elements);
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 70%);
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.popup {
+  display: block;
+  flex-shrink: 0;
+  height: 39px;
+  width: 39px;
+}
+
+.floppy__text {
+  font-family: "Press Start 2P", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.floppy-box-button {
+  height: 38px;
+  width: 293px;
+  background-color: black;
+  align-items: center;
+  justify-self: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  mix-blend-mode: difference;
+  border: 2px solid white;
+}
+
+.button-footer:focus {
+  outline: none;
+  box-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px rgba(0, 0, 0, 1);
+}
+
+.floppy-box-button:focus {
+  outline: none;
+  box-shadow: 2px 2px rgba(255, 255, 255, 1);
+}
+
+.card__like-button::before {
+  content: "";
+  transform: scaleX(0);
+  inset: 0;
+  position: absolute;
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.card__like-button:hover::before {
+  background-color: black;
+  transform: scaleX(1);
+}
+
+.button-footer::before {
+  content: "";
+  transform: scaleX(0);
+  inset: 0;
+  position: absolute;
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.button-footer:hover::before {
+  background-color: black;
+  transform: scaleX(1);
+}
+
+.floppy-box-button::before {
+  content: "";
+  transform: scaleX(0);
+  inset: 0;
+  position: absolute;
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.floppy-box-button:hover::before {
+  background-color: white;
+  transform: scaleX(1);
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border: var(--border-elements);
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.counter {
+  transition: fill 0.1s linear;
+  transition-delay: 0s;
+  fill: var(--contour-color);
+}
+
+.core {
+  transition: fill 0.3s linear;
+  transition-delay: 0.03s;
+  fill: transparent;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+  fill: transparent;
+}
+
+.like-icon:hover .core {
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+  fill: var(--contour-color);
+}
+
+.like-icon:hover .main-body {
+  transition-delay: 0.05s;
+  fill: var(--contour-color);
+}
+
+.like-icon:active .main-body {
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon:active .core {
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+  fill: var(--animation-fill-color);
+}
+
+.is-liked:hover .core,
+.is-liked:hover .main-body,
+.is-liked:hover .counter {
+  fill: var(--animation-fill-color);
+}
+
+.is-liked .core,
+.is-liked .main-body,
+.is-liked .counter {
+  fill: var(--animation-fill-color);
+}
+
+.like-icon .is-liked .core {
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
+}
+
+.like-icon .is-liked .main-body {
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+}
+
+.like-icon .is-liked .counter {
+  transition: fill 0.3s linear;
+  transition-delay: 0.06s;
+}
+
+.is-liked .heart {
+  transform-origin: center;
+  animation: scaleHeart 0.3s ease-in;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+.is-liked .sparks {
+  animation: sparksAround 0.3s ease-in;
+  animation-delay: 0.3s;
+  animation-iteration-count: 1;
+}
+
+@media (width <= 375px) {
+  .header {
+    block-size: 327px;
+  }
+
+  .logo-header {
+    font-size: 49px;
+  }
+
+  .title-header {
+    font-size: 14px;
+  }
+
+  .button-footer {
+    height: 84px;
+    width: 306px;
+    flex-direction: column;
+  }
+
+  .floppy {
+    width: 28px;
+    height: 28px;
+  }
 }
