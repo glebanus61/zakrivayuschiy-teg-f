@@ -18,6 +18,7 @@
   min-block-size: 100dvb;
   background-image: var(--background-gradient);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .width-project {
@@ -30,34 +31,33 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  block-size: 368px;
   background-color: #fff;
   border: var(--border-elements);
   margin-block-start: var(--margin);
-  padding: 1rem;
+  padding: 130px 122.5px;
 }
 
 .logo-header {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Press Start 2P", "fantasy";
   font-weight: 400;
-  font-size: 65px;
+  font-size: clamp(49px, 10vw, 65px);
   line-height: 100%;
   text-transform: uppercase;
 }
 
 .title-header {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Press Start 2P", "fantasy";
   font-weight: 400;
-  font-size: 23px;
+  font-size: clamp(14px, 3.5vw, 23px);
   line-height: 100%;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .main {
   inline-size: var(--width-project);
   margin-block-start: var(--margin);
   margin-block-end: calc(var(--margin) / 2);
-  background-color: #fff;
 }
 
 .post {
@@ -70,10 +70,11 @@
   display: flex;
   flex-direction: column;
   border: var(--border-elements);
+  background-color: #fff;
 }
 
 .post-item-title {
-  font-family: "Inter-Variable", sans-serif;
+  font-family: "Inter-Variable", "fantasy";
   font-variation-settings: "wght" 715;
   font-style: normal;
   font-size: 18px;
@@ -91,35 +92,35 @@
   width: 100%;
 }
 
-.filter1 {
+.image-saturate {
   filter: saturate(500%);
 }
 
-.filter2 {
+.image-sepia {
   filter: sepia(50%);
 }
 
-.filter3 {
+.image-drop-shadow {
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
 
-.filter4 {
+.image-drop-saturated {
   filter: saturate(200%);
 }
 
-.filter5 {
+.image-contrast {
   filter: contrast(190%);
 }
 
-.filter6 {
+.image-brightness {
   filter: brightness(150%);
 }
 
-.filter7 {
+.image-grayscale {
   filter: grayscale(1);
 }
 
-.filter8 {
+.image-blur {
   filter: blur(0.3rem);
 }
 
@@ -127,7 +128,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Press Start 2P", "fantasy";
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -135,18 +136,23 @@
   mix-blend-mode: hard-light;
   color: #00ffff;
   opacity: 0.5;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--stroke-color);
+  text-shadow:
+    -1px 0 var(--stroke-color),
+    0 1px var(--stroke-color),
+    1px 0 var(--stroke-color),
+    0 -1px var(--stroke-color);
 }
 
 @supports (text-stroke: 1px var(--stroke-color)) {
   span {
-    text-stroke: 1px var(--stroke-color);
+    -webkit-text-stroke: 1px var(--stroke-color);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--stroke-color);
   }
 }
 
 .post-item-text {
-  font-family: "Inter-Variable", sans-serif;
+  font-family: "Inter-Variable", "fantasy";
   font-variation-settings: "wght" 410;
   font-size: 18px;
   line-height: 21px;
@@ -168,12 +174,12 @@
   background-color: transparent;
   border: 2px solid transparent;
   cursor: pointer;
+  transition: border 0.3s ease;
 }
 
 .like-icon {
   background-color: transparent;
   border: transparent;
-  transition: border 0.3s ease;
   cursor: pointer;
 }
 
@@ -182,13 +188,10 @@
   height: 38px;
   border: var(--border-elements);
   background-color: transparent;
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
 }
 
 .button__text {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Press Start 2P", "fantasy";
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
@@ -198,13 +201,13 @@
   mix-blend-mode: difference;
 }
 
-.footer {
+article {
   display: flex;
   justify-content: center;
   margin-bottom: var(--margin);
 }
 
-.button-footer {
+.button-save {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,9 +215,12 @@
   border: var(--border-elements);
   width: 335px;
   height: 55px;
+}
+
+.button-decoration {
   transition: box-shadow 0.3s ease;
-  cursor: pointer;
   position: relative;
+  cursor: pointer;
 }
 
 .floppy {
@@ -230,24 +236,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 353px;
+  width: 341px;
   gap: 30px;
   padding: 30px;
-  border: var(--border-elements);
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 70%);
+  background-color: rgb(0 0 0 / 75%);
+  overflow: hidden;
 }
 
-.form {
+.section {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
 }
 
-.popup {
+.floppy-disk {
   display: block;
   flex-shrink: 0;
   height: 39px;
@@ -255,7 +261,7 @@ dialog::backdrop {
 }
 
 .floppy__text {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Press Start 2P", "fantasy";
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -268,19 +274,11 @@ dialog::backdrop {
   background-color: black;
   align-items: center;
   justify-self: center;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-  position: relative;
   mix-blend-mode: difference;
   border: 2px solid white;
 }
 
-.button-footer:focus {
-  outline: none;
-  box-shadow: 2px 2px rgba(0, 0, 0, 1);
-}
-
-.card__like-button:focus {
+.button-decoration:focus {
   outline: none;
   box-shadow: 2px 2px rgba(0, 0, 0, 1);
 }
@@ -297,26 +295,26 @@ dialog::backdrop {
   position: absolute;
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
+  background-color: black;
   overflow: hidden;
 }
 
 .card__like-button:hover::before {
-  background-color: black;
   transform: scaleX(1);
 }
 
-.button-footer::before {
+.button-save::before {
   content: "";
   transform: scaleX(0);
   inset: 0;
   position: absolute;
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
+  background-color: black;
   overflow: hidden;
 }
 
-.button-footer:hover::before {
-  background-color: black;
+.button-save:hover::before {
   transform: scaleX(1);
 }
 
@@ -327,11 +325,11 @@ dialog::backdrop {
   position: absolute;
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
+  background-color: white;
   overflow: hidden;
 }
 
 .floppy-box-button:hover::before {
-  background-color: white;
   transform: scaleX(1);
 }
 
@@ -385,12 +383,6 @@ dialog::backdrop {
   fill: var(--animation-fill-color);
 }
 
-.is-liked:hover .core,
-.is-liked:hover .main-body,
-.is-liked:hover .counter {
-  fill: var(--animation-fill-color);
-}
-
 .is-liked .core,
 .is-liked .main-body,
 .is-liked .counter {
@@ -427,18 +419,10 @@ dialog::backdrop {
 
 @media (width <= 375px) {
   .header {
-    block-size: 327px;
+    padding: 122px 16px;
   }
 
-  .logo-header {
-    font-size: 49px;
-  }
-
-  .title-header {
-    font-size: 14px;
-  }
-
-  .button-footer {
+  .button-save {
     height: 84px;
     width: 306px;
     flex-direction: column;
