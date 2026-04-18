@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
-    <link rel="icon" href="./images/favicon.svg" sizes="any" />
-    <link rel="icon" href="icons.svg" type="image/svg+xml" />
+    <link rel="icon" href="./svg/favicon.svg" sizes="any" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   </head>
   <body class="page width-project">
@@ -78,7 +78,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -139,7 +141,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -201,7 +205,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -263,7 +269,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -329,7 +337,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -385,7 +395,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -451,7 +463,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -515,7 +529,9 @@
               </svg>
             </button>
             <button type="button" class="card__like-button button-decoration">
-              <span class="button__text">Like</span>
+              <p>
+                <span class="button__text">Like</span>
+              </p>
             </button>
           </div>
         </li>
@@ -530,31 +546,37 @@
       >
         <svg
           class="floppy"
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="/http://www.w3.org/2000/svg"
           viewBox="0 0 39 39"
         >
-          <use href="../svg/icons.svg#floppy" />
+          <use href="./svg/icons.svg#floppy" />
         </svg>
-        <span class="button__text">Сохранить на память</span>
+        <p>
+          <span class="button__text">Сохранить на память</span>
+        </p>
       </button>
       <dialog id="floppy-id">
         <div class="floppy-box">
-          <span class="section">
+          <section class="section">
             <svg
               class="floppy-disk"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 39 39"
             >
-              <use href="../svg/icons.svg#floppy" />
+              <use href="svg/icons.svg#floppy" />
             </svg>
-            <p class="floppy__text">Вставьте дискету, чтобы продолжить</p>
-          </span>
+              <span class="floppy__text"
+                >Вставьте дискету, чтобы продолжить</span
+              >
+          </section>
           <button
             class="floppy-box-button button-decoration"
             type="button"
             onclick="window['floppy-id'].close()"
           >
-            <span class="button__text"> ок </span>
+            <p>
+              <span class="button__text"> ок </span>
+            </p>
           </button>
         </div>
       </dialog>

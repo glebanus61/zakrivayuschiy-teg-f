@@ -143,14 +143,6 @@
     0 -1px var(--stroke-color);
 }
 
-@supports (text-stroke: 1px var(--stroke-color)) {
-  span {
-    -webkit-text-stroke: 1px var(--stroke-color);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--stroke-color);
-  }
-}
-
 .post-item-text {
   font-family: "Inter-Variable", "fantasy";
   font-variation-settings: "wght" 410;
@@ -343,6 +335,12 @@ dialog::backdrop {
   border: var(--border-elements);
 }
 
+.is-liked .core,
+.is-liked .main-body,
+.is-liked .counter {
+  fill: var(--animation-fill-color);
+}
+
 .sparks {
   opacity: 0;
 }
@@ -372,14 +370,9 @@ dialog::backdrop {
 }
 
 .like-icon:hover .main-body {
-  transition-delay: 0.05s;
-  fill: var(--contour-color);
-}
-
-.like-icon:active .main-body {
   transition: fill 0.3s linear;
   transition-delay: 0.05s;
-  fill: var(--animation-fill-color);
+  fill: var(--contour-color);
 }
 
 .like-icon:active .core {
@@ -388,20 +381,20 @@ dialog::backdrop {
   fill: var(--animation-fill-color);
 }
 
-.is-liked .core,
-.is-liked .main-body,
-.is-liked .counter {
-  fill: var(--animation-fill-color);
-}
-
-.like-icon .is-liked .core {
+.like-icon:active .main-body {
   transition: fill 0.3s linear;
-  transition-delay: 0s;
+  transition-delay: 0.05s;
+  fill: var(--animation-fill-color);
 }
 
 .like-icon .is-liked .main-body {
   transition: fill 0.3s linear;
   transition-delay: 0.05s;
+}
+
+.like-icon .is-liked .core {
+  transition: fill 0.3s linear;
+  transition-delay: 0s;
 }
 
 .like-icon .is-liked .counter {
@@ -419,6 +412,14 @@ dialog::backdrop {
   animation: sparksAround 0.3s ease-in;
   animation-delay: 0.3s;
   animation-iteration-count: 1;
+}
+
+@supports (--webkit-text-stroke: 1px var(--stroke-color)) {
+  .label {
+    -webkit-text-stroke: 1px var(--stroke-color);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--stroke-color);
+  }
 }
 
 @media (width <= 375px) {
@@ -442,3 +443,4 @@ dialog::backdrop {
     padding-right: 40px;
   }
 }
+
