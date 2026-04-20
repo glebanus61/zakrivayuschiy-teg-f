@@ -38,7 +38,7 @@
 }
 
 .logo-header {
-  font-family: "Press Start 2P", "fantasy";
+  font-family: "Press Start 2P", fantasy;
   font-weight: 400;
   font-size: clamp(49px, 10vw, 65px);
   line-height: 100%;
@@ -46,7 +46,7 @@
 }
 
 .title-header {
-  font-family: "Press Start 2P", "fantasy";
+  font-family: "Press Start 2P", fantasy;
   font-weight: 400;
   font-size: clamp(14px, 3.5vw, 23px);
   line-height: 100%;
@@ -74,11 +74,10 @@
 }
 
 .post-item-title {
-  font-family: "Inter-Variable", "fantasy";
+  font-family: "Inter-Variable", fantasy;
   font-variation-settings: "wght" 715;
   font-style: normal;
   font-size: 18px;
-  line-height: 135%;
   padding-inline: 10px;
   min-height: 30px;
   border-bottom: 2px solid black;
@@ -86,6 +85,7 @@
 
 .post-image {
   position: relative;
+  max-height: 696px;
 }
 
 .image {
@@ -128,7 +128,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: "Press Start 2P", "fantasy";
+  font-family: "Press Start 2P", fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -143,8 +143,17 @@
     0 -1px var(--stroke-color);
 }
 
+@supports (--webkit-text-stroke: 1px var(--stroke-color)) {
+  .label {
+    -webkit-text-stroke: 1px var(--stroke-color);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--stroke-color);
+    text-shadow: none;
+  }
+}
+
 .post-item-text {
-  font-family: "Inter-Variable", "fantasy";
+  font-family: "Inter-Variable", fantasy;
   font-variation-settings: "wght" 410;
   font-size: 18px;
   line-height: 21px;
@@ -183,7 +192,7 @@
 }
 
 .button__text {
-  font-family: "Press Start 2P", "fantasy";
+  font-family: "Press Start 2P", fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
@@ -193,7 +202,7 @@
   mix-blend-mode: difference;
 }
 
-article {
+.box-button {
   display: flex;
   justify-content: center;
   margin-bottom: var(--margin);
@@ -257,7 +266,7 @@ dialog::backdrop {
 }
 
 .floppy__text {
-  font-family: "Press Start 2P", "fantasy";
+  font-family: "Press Start 2P", fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -267,11 +276,10 @@ dialog::backdrop {
 .floppy-box-button {
   height: 38px;
   width: clamp(261px, 100%, 293px);
-  background-color: black;
+  background-color: transparent;
   align-items: center;
   justify-self: center;
-  mix-blend-mode: difference;
-  border: 2px solid white;
+  border: var(--border-elements);
   text-transform: uppercase;
 }
 
@@ -280,12 +288,7 @@ dialog::backdrop {
   box-shadow: 2px 2px rgba(0, 0, 0, 1);
 }
 
-.floppy-box-button:focus {
-  outline: none;
-  box-shadow: 2px 2px rgba(255, 255, 255, 1);
-}
-
-.card__like-button::before {
+.button-decoration::before {
   content: "";
   transform: scaleX(0);
   inset: 0;
@@ -296,37 +299,7 @@ dialog::backdrop {
   overflow: hidden;
 }
 
-.card__like-button:hover::before {
-  transform: scaleX(1);
-}
-
-.button-save::before {
-  content: "";
-  transform: scaleX(0);
-  inset: 0;
-  position: absolute;
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-  background-color: black;
-  overflow: hidden;
-}
-
-.button-save:hover::before {
-  transform: scaleX(1);
-}
-
-.floppy-box-button::before {
-  content: "";
-  transform: scaleX(0);
-  inset: 0;
-  position: absolute;
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-  background-color: white;
-  overflow: hidden;
-}
-
-.floppy-box-button:hover::before {
+.button-decoration:hover::before {
   transform: scaleX(1);
 }
 
@@ -414,17 +387,17 @@ dialog::backdrop {
   animation-iteration-count: 1;
 }
 
-@supports (--webkit-text-stroke: 1px var(--stroke-color)) {
-  .label {
-    -webkit-text-stroke: 1px var(--stroke-color);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--stroke-color);
-  }
-}
-
 @media (width <= 375px) {
   .header {
     padding: 122px 16px;
+  }
+
+  .post-item-title {
+    min-height: 52px;
+  }
+
+  .post-image {
+    max-height: 371px;
   }
 
   .button-save {
